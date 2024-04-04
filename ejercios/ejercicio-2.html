@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COMIDA >:(</title>
+  <style>
+    body {
+      background-color: #AFE9FF; 
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #contenedor-principal {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #contenido {
+      border: 2px ;
+      padding: 20px;
+      background-color: #FFD699;
+      text-align: center;
+      border-radius: 10px;
+      position: relative; /* Agregamos posición relativa */
+    }
+
+    #titulo {
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    #pregunta {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    #opciones {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #8FD9D9;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #7884BB;
+    }
+
+    /* Estilo para la imagen */
+    #imagen-comida {
+      display: none; 
+      position: absolute;
+      width: auto;      
+      max-height: 80vh; 
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #mensaje {
+      display: none;
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="contenedor-principal">
+    <div id="contenido">
+      <div id="titulo">¡WENAS!</div>
+      <div id="pregunta">¿Quieres ver Harry Potter conmigo?</div>
+      <div id="opciones">
+        <button id="siBtn">Sí</button>
+        <button id="noBtn">No</button>
+      </div>
+      <div id="mensaje">SABIA QUE NO TE PODIAS NEGAR. MUAK</div>
+    </div>
+  </div>
+
+  <!-- GIF de comida -->
+  <img id="imagen-comida" src="C:\Users\carlo\OneDrive\Documentos\ejercios\HARRY.gif" alt="Comida deliciosa">
+
+  <script>
+    const siBtn = document.getElementById('siBtn');
+    const imagenComida = document.getElementById('imagen-comida');
+    const mensaje = document.getElementById('mensaje');
+
+    siBtn.addEventListener('click', function() {
+      // Mostrar la imagen y el mensaje cuando se hace clic en el botón "Sí"
+      imagenComida.style.display = 'block';
+      mensaje.style.display = 'block';
+      alert('Espero que comas pronto.');
+    });
+
+    const noBtn = document.getElementById('noBtn');
+    noBtn.addEventListener('mouseover', function() {
+      const X = Math.random() * (window.innerWidth - noBtn.clientWidth);
+      const Y = Math.random() * (window.innerHeight - noBtn.clientHeight);
+      noBtn.style.position = "absolute";
+      noBtn.style.left = X + "px";
+      noBtn.style.top = Y + "px";
+    });
+  </script>
+</body>
+</html>
+
+
